@@ -49,6 +49,7 @@ public class FilmService {
             film.setCategories(categoryList);
             filmDAO.save(film);
 
+
             FilmText filmText = new FilmText();
             filmText.setId(film.getId());
             filmText.setDescription("Historical movie in Carpathion Region");
