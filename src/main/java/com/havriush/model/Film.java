@@ -3,10 +3,7 @@ package com.havriush.model;
 import com.havriush.converter.RatingConverter;
 import com.havriush.converter.YearConverter;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -77,12 +74,16 @@ public class Film {
     @JoinTable(name = "film_actor",
             joinColumns = @JoinColumn(name = "film_id", referencedColumnName = "film_id"),
             inverseJoinColumns = @JoinColumn(name = "actor_id", referencedColumnName = "actor_id"))
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private Set<Actor> actors;
 
     @ManyToMany
     @JoinTable(name = "film_category",
             joinColumns = @JoinColumn(name = "film_id", referencedColumnName = "film_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id", referencedColumnName = "category_id"))
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private Set<Category> categories;
 
     public Set<Feature> getSpecialFeatures() {

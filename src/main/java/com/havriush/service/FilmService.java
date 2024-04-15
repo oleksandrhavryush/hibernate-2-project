@@ -51,10 +51,10 @@ public class FilmService {
 
 
             FilmText filmText = new FilmText();
+            filmText.setFilm(film);
             filmText.setId(film.getId());
             filmText.setDescription("Historical movie in Carpathion Region");
             filmText.setTitle("Zhakhar Berkut");
-            filmText.setFilm(film);
             filmTextDAO.save(filmText);
 
             session.getTransaction().commit();

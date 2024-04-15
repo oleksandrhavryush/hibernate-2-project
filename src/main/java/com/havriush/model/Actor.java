@@ -2,6 +2,8 @@ package com.havriush.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
@@ -31,6 +33,8 @@ public class Actor {
     @JoinTable(name = "film_actor",
             joinColumns = @JoinColumn(name = "actor_id", referencedColumnName = "actor_id"),
             inverseJoinColumns = @JoinColumn(name = "film_id", referencedColumnName = "film_id"))
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
     private Set<Film> films;
 
 }
