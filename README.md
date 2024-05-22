@@ -1,17 +1,39 @@
-# Project Description
-This project focuses on Hibernate. The main objective is to understand the database structure, map entities to existing tables, and add minimal functionality to verify that the mapping is done correctly.
+# Hibernate Project: Database Management and Mapping
 
-## Project Details
-**Objective:** The main objective is to create all necessary entity classes and map them to the tables of the movie schema.
+This project is a comprehensive exploration of Hibernate, a Java framework that simplifies the development of Java application to interact with the database. The primary objective is to understand the structure of a database, map entities to existing tables, and add minimal functionality to ensure the mapping is done correctly.
 
-### Functionality:
-- **Create New Customer:** Implement a method that creates a new customer along with all dependent fields in the customer table. Ensure that the method is transactional to avoid inconsistencies.
-- **Customer Return Rental:** Add a transactional method describing the event where a customer returns a previously rented movie.
-- **Customer Rent Inventory:** Implement a transactional method describing the event where a customer goes to a store, rents inventory, and makes a payment to the staff.
-- **Production of New Film:** Add a transactional method describing the event where a new film is produced and made available for rent.
+## Project Overview
+
+The project revolves around a movie schema, with the main focus on creating necessary entity classes and mapping them to the tables within the schema. It involves implementing transactional methods that simulate real-world scenarios, such as a customer renting and returning a movie, and the production of a new film.
+
+## Features
+
+- **Customer Creation:** A transactional method that creates a new customer along with all dependent fields in the customer table, ensuring data consistency.
+- **Movie Rental and Return:** Transactional methods that simulate a customer renting and returning a movie, providing a practical application of the database mappings.
+- **New Film Production:** A transactional method that simulates the production of a new film and its availability for rent.
 
 ## Database Structure
-The project utilizes existing tables within the movie schema. However, there are some improvements suggested, such as adding foreign keys to ensure data integrity.
 
-## Additional Notes
-- A foreign key constraint is missing in the film_text table, indicating a potential data integrity issue. Other similar discrepancies need to be identified and documented in the project's root directory in the form of a README file.
+The project utilizes existing tables within the movie schema. However, it also identifies and suggests improvements, such as adding missing foreign keys to ensure data integrity.
+
+## Getting Started
+
+To get the project up and running, follow these steps:
+
+1. **Build the Docker Image:** Navigate to the directory containing the Dockerfile and `dump-hibernate-2.sql` using a terminal. Execute the following command to build the Docker image named `my-db`:
+
+    ```bash
+    docker build -t my-db .
+    ```
+
+2. **Run the Docker Container:** Execute the following command to run the Docker container using the `my-db` image:
+
+    ```bash
+    docker run --name my-db -d my-db
+    ```
+
+This will create a Docker container with the MySQL database, import the SQL dump, and have it ready for use with the Hibernate project.
+
+## Conclusion
+
+This project serves as a practical guide to understanding Hibernate and its application in managing databases. It provides hands-on experience in mapping entities to database tables and implementing transactional methods to manipulate the data.
