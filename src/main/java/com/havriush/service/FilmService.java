@@ -30,7 +30,7 @@ public class FilmService {
             session.beginTransaction();
             Film film = new Film();
 
-            Language language = languageDAO.getItems(0, 10).get(6);
+            Language language = languageDAO.getItems(0, 10).get(5);
             Set<Category> categoryList = new HashSet<>(categoryDAO.getItems(0, 10));
             Set<Actor> actorList = new HashSet<>(actorDAO.getItems(0, 20));
 
