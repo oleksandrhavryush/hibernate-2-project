@@ -29,7 +29,7 @@ To get the project up and running, follow these steps:
 2. **Run the Docker Container:** Execute the following command to run the Docker container using the `my-db` image:
 
     ```bash
-    docker run --name my-db -d my-db
+    docker run --name my-db -d -p 3306:3306 my-db
     ```
 
 This will create a Docker container with the MySQL database, import the SQL dump, and have it ready for use with the Hibernate project.
